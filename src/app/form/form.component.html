@@ -1,0 +1,121 @@
+
+<form method = "" action = "" #f="ngForm" (ngSubmit)="onSubmit()" id="cs-survey" > 
+    <div class="row">
+        <div class="form-group col">
+            <label for="Name" required>First Name</label>
+            <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name" name="FirstName" [(ngModel)]="student.firstname" >
+        </div>
+        <div class="form-group col">
+            <label for="Name" required>Last Name</label>
+            <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name" name="LastName" [(ngModel)]="student.lastname">
+        </div>
+        <div class="form-group col">
+            <label for="StudentID" required>Student ID</label>
+            <input type="text" class="form-control" id="StudentID" placeholder="Enter Student ID" name="StudentID" [(ngModel)]="student.userid">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-5">
+            <label for="Address" required>Street Address</label>
+            <input type="text" class="form-control" id="Address" placeholder="123 45th street" name="Address" [(ngModel)]="student.address">
+        </div>
+        <div class="form-group col-3">
+            <label for="City" required>City</label>
+            <input type="text" class="form-control" id="City" placeholder="" name="City" [(ngModel)]="student.city">
+        </div>
+        <div class="form-group col-1">
+            <label for="State" required>State</label>
+            <input type="text" class="form-control" id="State" placeholder="" name="State" [(ngModel)]="student.state">
+        </div>
+        <div class="form-group col-3">
+            <label for="Zip" required>Zip Code</label>
+            <input type="text" class="form-control" id="Zip" placeholder="12345" name="Zip" [(ngModel)]="student.zipcode">
+            <div id="zipError"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="tel">Phone Number <span class="optional"> - optional</span></label>
+            <input type="tel" class="form-control" id="tel" placeholder="123-456-7891" name="tel" [(ngModel)]="student.phone">
+        </div>
+        <div class="form-group col">
+            <label for="email" required>Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="WonderWoman@Themyscira.com" name="email" [(ngModel)]="student.email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-3">
+            <label for="date" required>Date </label>
+            <input type="date" class="form-control" id="date" placeholder="mm/dd/yyy" name="date" [(ngModel)]="student.user_DATE">
+        </div>
+    </div>
+    What did you like most about the campus?
+    <div class="form-group">
+        <div class="row">
+            <div class="col-2">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Students" value="Students" (change)="onCheckboxChange($event, 'Students')">
+                    <label class="custom-control-label" for="Students">Students</label>
+                </div>    
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Location" value="Location" (change)="onCheckboxChange($event, 'Location')">
+                    <label class="custom-control-label" for="Location">Location</label>
+                </div>  
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Campus" value="Campus" (change)="onCheckboxChange($event, 'Campus')">
+                    <label class="custom-control-label" for="Campus">Campus</label>
+                </div>  
+            </div>
+            <div class="col-2">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Atmosphere" value="Atmosphere" (change)="onCheckboxChange($event, 'Atmosphere')">
+                    <label class="custom-control-label" for="Atmosphere">Atmosphere</label>
+                </div>       
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Dorms" value="Dorms" (change)="onCheckboxChange($event, 'Dorms')">
+                    <label class="custom-control-label" for="Dorms">Dorm Rooms</label>
+                </div>  
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" name="campus" id="Sports" value="Sports" (change)="onCheckboxChange($event, 'Sports')">
+                    <label class="custom-control-label" for="Sports">Sports</label>
+                </div> 
+            </div>
+        </div>
+    </div>         
+    How did you become interested in the University?
+    <div class="form-group">
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="Friends" name="interest" class="custom-control-input" value="Friends" [(ngModel)]="student.radio">
+            <label class="custom-control-label" for="Friends">Friends</label>
+        </div>  
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="Television" name="interest" class="custom-control-input" value="Television" [(ngModel)]="student.radio">
+            <label class="custom-control-label" for="Television">Television</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="Internet" name="interest" class="custom-control-input" value="Internet" [(ngModel)]="student.radio">
+            <label class="custom-control-label" for="Internet">Internet</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="Other" name="interest" class="custom-control-input" value="Other" [(ngModel)]="student.radio">
+            <label class="custom-control-label" for="Other">Other </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-3">
+            <label for="reccomend">How likely are you to reccomend GMU?</label>
+            <select class="form-control" id="reccomend" name="reccomend" [(ngModel)]="student.selection" required>
+                <option value="veryLikely">Very Likely</option>
+                <option value="Likely">Likely</option>
+                <option value="Unlikely">Unlikely</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <ul id="valErrors" class="errorTxt">
+            
+        </ul>
+    </div>
+    <input type="button" id="reset" value="Reset">
+    <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,45 @@
+nav{
+    border-style: solid;
+    border-color:  #006633;
+    border-width: 5px;
+    box-shadow: 3px 3px 8px #006633;
+    background-color:  #FFCC33;
+}
+header{
+    border-style: solid;
+    border-color:  #006633;
+    border-width: 5px;
+    box-shadow: 3px 3px 8px #006633;
+    background-color:  #FFCC33;
+}
+li a{
+    color:#006633;
+    text-decoration: none;
+}
+h1{
+    color:#006633;
+}
+.logo{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+body{
+    background-color: lightgrey;
+    margin: 8px;
+}
+
+.optional{
+    color:darkslategrey;
+    font-style: italic;
+
+}
+th.mdc-data-table__header-cell {
+    font-weight: bold !important;
+}
+/* .error{
+    border-color:red;
+} */
+.errorTxt{
+    color:red;
+}

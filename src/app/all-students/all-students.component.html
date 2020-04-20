@@ -1,0 +1,17 @@
+
+
+<div class="content" role="main">
+    <div>
+        List of all students:
+    </div>
+    <br>
+    <div *ngFor="let studentId of this.students">
+      <ul>
+      <li>
+        <a routerLink="/app-studentinfo/{{studentId}}">{{studentId}}</a>  
+      </li>
+    </ul>
+    </div>
+
+
+</div>
