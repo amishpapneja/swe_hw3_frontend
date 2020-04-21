@@ -70,7 +70,7 @@ export class FormComponent implements OnInit {
   validate() {
     $("#valErrors").empty();
     var invalid = [];
-    var radioCount = radio('interest');
+    var radioCount = this.radio('interest');
 
     if (radioCount ==0){
       invalid.push("<li>Please select how you became interested in the university</li>");
@@ -87,7 +87,7 @@ export class FormComponent implements OnInit {
       invalid.push("<li> lastname can only contain alphabet characters </li>");
     }
     if (this.alphanumeric(this.student.userid) == false){
-      invalid.push("<li> address can only contain alphanumeric values</li>");
+      invalid.push("<li> userid can only contain alphanumeric values</li>");
     }
     if (this.alphabets(this.student.city) == false){
       invalid.push("<li> city can only contain alphabet characters </li>");
