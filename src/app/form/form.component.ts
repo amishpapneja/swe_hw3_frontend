@@ -18,6 +18,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //when the form submits
   onSubmit(){  
     this.removeNulls();
     if (!this.validate()){
@@ -32,7 +34,7 @@ export class FormComponent implements OnInit {
     });
     
   }
-
+  //set empty string if null
   setIt(key,value){
     if(!value){
       return "";
@@ -51,6 +53,7 @@ export class FormComponent implements OnInit {
       }
     }
   }
+  //remove nulls from variables
   removeNulls(){
     this.student.userid = this.setIt("userid",this.student.userid);
     this.student.firstname = this.setIt("firstname",this.student.firstname);
@@ -66,7 +69,7 @@ export class FormComponent implements OnInit {
     this.student.radio = this.setIt("radio",this.student.radio);
     this.student.selection = this.setIt("selection",this.student.selection);
   }
-
+  //validate the fields, make sure they are acurate for type
   validate() {
     $("#valErrors").empty();
     var invalid = [];
@@ -98,9 +101,9 @@ export class FormComponent implements OnInit {
     if (this.numeric(this.student.zipcode) == false){
       invalid.push("<li> zip can only contain numeric values</li>");
     }
-    if (this.alphanumeric(this.student.address) == false){
-      invalid.push("<li> address can only contain alphanumeric values</li>");
-    }
+    // if (this.alphanumeric(this.student.address) == false){
+    //   invalid.push("<li> address can only contain alphanumeric values</li>");
+    // }
     if (this.validEmail(this.student.email) == false){
       invalid.push("<li> Your email is not a valid email address</li>");
     }
@@ -114,7 +117,7 @@ export class FormComponent implements OnInit {
       return false; 
     }
   }
-
+//check values
   checkBoxes(txt){
     var count=0;
     $("input[type='checkbox'][name=" + txt +" ]").each(function(i, element){
