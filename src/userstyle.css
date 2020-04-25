@@ -3,7 +3,7 @@ nav{
     border-color:  #006633;
     border-width: 5px;
     box-shadow: 3px 3px 8px #006633;
-    background-color:  #FFCC33;
+    background-color:  rgb(255, 51, 245);
 }
 header{
     border-style: solid;
